@@ -2,26 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap');
+
+body {
+  color: #F9FAFB;
+  background: rgb(14,1,25);
+  background: -moz-linear-gradient(133deg, rgba(14,1,25,1) 0%, rgba(42,8,61,1) 100%);
+  background: -webkit-linear-gradient(133deg, rgba(14,1,25,1) 0%, rgba(42,8,61,1) 100%);
+  background: linear-gradient(133deg, rgba(14,1,25,1) 0%, rgba(42,8,61,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0e0119",endColorstr="#2a083d",GradientType=1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.scroll {
+  scroll-behavior: smooth;
+}
+
+.font_shadows {
+  font-family: 'Cinzel Decorative';
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(192, 160, 185, 0.40);
+    border-radius: 2px;
+    height: 5px;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(204, 60, 255, 0.60);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.mouse-scroll {
+  width: 38px;
+  height: 60px;
+  background-color: transparent;
+  border: 3px solid #CC3CFF;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-down {
+  animation: scrollDown 1.5s infinite; /* Define a animação */
+}
+
+@keyframes scrollDown {
+  0%, 100% {
+    transform: translateY(0); /* No início e no fim da animação, posição inicial (sem movimento) */
+  }
+  50% {
+    transform: translateY(10px); /* No meio da animação, posição deslocada para baixo */
+  }
+}
+
+.text-animated {
+  font-weight: 700;
+  text-align: center;
+  font-size: 40px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #4B6ED5, #FF7A43, #CC3CFF);
+  letter-spacing: 5px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: shine 5s linear infinite;
+  position: relative;
+}
+
+@keyframes shine {
+  0% {
+    background-position-x: -500%;
+  }
+  100% {
+    background-position-x: 500%;
+  }
 }

@@ -1,113 +1,161 @@
+'use client'
+
+import { useState } from 'react'
+import CardProject from '@/components/CardProject'
+import Tag from '@/components/Tag'
 import Image from 'next/image'
+import { BsLinkedin, BsWhatsapp } from 'react-icons/bs'
+import { HiArrowNarrowDown } from 'react-icons/hi'
+import { FaGithub } from 'react-icons/fa'
+import { VscDebugBreakpointLog } from 'react-icons/vsc'
+import { HiOutlineMail } from 'react-icons/hi'
+import Button from '@/components/Button'
+
+import { Link } from 'react-scroll';
+
+import { cinzel } from './fonts'
+
+import './globals.css'
+import TextAnimated from '@/components/TextAnimated'
+import CursorVagalume from '@/components/CursorVagalume'
 
 export default function Home() {
+  const [currentLanguage, setCurrentLanguage] = useState('pt');
+
+  const handleChangeLanguage = (e) => {
+    setCurrentLanguage(e.target.value);
+  };
+
+  const toggleLanguage = () => {
+    setCurrentLanguage(currentLanguage === 'pt' ? 'en' : 'pt');
+  };
+
+  const translations = {
+    pt: {
+      greeting: 'THIAGO FERNANDES',
+      description: 'DESENVOLVEDOR FRONT-END',
+      portfolio: 'Portifólio',
+      contact: 'Contato',
+      email: 'thiagof.profissional@gmail.com',
+      whatsapp: '(63)99975-3649',
+      copy: 'Th Web Designer 2023 - Alguns direitos resevardos',
+    },
+    en: {
+      greeting: 'THIAGO FERNANDES',
+      description: 'FRONT END DEVELOPER',
+      portfolio: 'Portfolio',
+      contact: 'Contact',
+      email: 'thiagof.profissional@gmail.com',
+      whatsapp: '(63)99975-3649',
+      copy: 'Th Web Designer 2023 - Some rights reserved',
+    },
+  };
+
+  const handleClick = () => {
+    alert('Botão clicado!');
+  };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <>
+      <CursorVagalume />
+      <main className="w-full min-h-screen shadow-2xl shadow-violeta-100 bg-transparent flex items-center flex-col gap-12 py-8 px-12 rounded-lg">
+
+        <nav className='w-full flex justify-between'>
+          <div className='flex gap-1 items-center'>
+            <span className={` ${cinzel.className} text-3xl `}>Th</span>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src="/images/iconth.svg"
+              width={40}
+              height={40}
+              alt="Logotipo Th"
             />
-          </a>
-        </div>
-      </div>
+          </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          <div className='flex items-center gap-6'>
+            <div className='pr-4'>
+              <select title='Idioma' value={currentLanguage} onChange={handleChangeLanguage} className='outline-none max-md:hidden cursor-pointer bg-transparent border border-solid border-blue-500 text-blue-500 rounded px-2 py-1'>
+                <option value="pt">Português</option>
+                <option value="en">English</option>
+              </select>
+              <button onClick={toggleLanguage} className='hidden max-md:flex cursor-pointer bg-transparent border border-solid border-blue-500 text-blue-500 rounded px-2 py-1'>
+                {currentLanguage === 'pt' ? 'EN' : 'PT'}
+              </button>
+            </div>
+            <a className='cursor-pointer' href="https://www.linkedin.com/in/thiago-fernandes-de-sousa/ " title='Linkendin' target='_blank'>
+              <BsLinkedin size={32} />
+            </a>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+            <a className='cursor-pointer' href="https://github.com/Th7-Sousa" title='Github' target='_blank'>
+              <FaGithub size={32} />
+            </a>
+          </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        </nav>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+        <section className='flex flex-col items-center gap-24 pt-4 pb-12'>
+          <div className='flex justify-center'> <TextAnimated /></div>
+          <div className='flex flex-col items-center gap-10'>
+            <h1 className={` ${cinzel.className} text-8xl font-medium tracking-wider`}>{translations[currentLanguage].greeting}</h1>
+            <h2 className='text-2xl tracking-widest'>{translations[currentLanguage].description}</h2>
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <Link to="portfolio" smooth={true} spy={true} duration={600} offset={-50} className="cursor-pointer">
+            <div className="mouse-scroll mt-10">
+              <HiArrowNarrowDown className="arrow-down" size={20} color='#CC3CFF' />
+            </div>
+          </Link>
+        </section>
+
+        <section id='portfolio' className='w-full flex flex-col items-center gap-8'>
+          <h2 className='text-6xl text-white'>{translations[currentLanguage].portfolio}</h2>
+          <div className='flex flex-col gap-12'>
+            <div className='flex flex-wrap gap-28'>
+              <CardProject href="https://th7-sousa.github.io/Eleicoes-Democraticas/" src="/images/eleicoes.png" name="Eleições Democráticas">
+                <Tag tagname="Html" />
+                <VscDebugBreakpointLog />
+                <Tag tagname="Javascript" />
+                <VscDebugBreakpointLog />
+                <Tag tagname="Bootstrap" />
+              </CardProject>
+
+              <CardProject href="#" src="/images/fast-service.png" name="Fast services (em progresso)">
+                <Tag tagname="Next.js" />
+                <VscDebugBreakpointLog />
+                <Tag tagname="React.js" />
+                <VscDebugBreakpointLog />
+                <Tag tagname="TailwindCSS" />
+              </CardProject>
+
+              <CardProject href="#" src="/images/odonto-admin.png" name="Odonto Admin (em progresso)">
+                <Tag tagname="Next.js" />
+                <VscDebugBreakpointLog />
+                <Tag tagname="React.js" />
+                <VscDebugBreakpointLog />
+                <Tag tagname="TailwindCSS" />
+              </CardProject>
+            </div>
+          </div>
+        </section>
+
+        <section className='w-full pt-4 flex flex-col items-center'>
+          <div className='flex flex-col gap-8'>
+            <h2 className='text-6xl text-white'>{translations[currentLanguage].contact}</h2>
+            <div className='flex gap-2 items-center'>
+              <HiOutlineMail size={28} />
+              <span>{translations[currentLanguage].email}</span>
+            </div>
+            <div className='flex gap-2 items-center'>
+              <BsWhatsapp size={28} />
+              <span>{translations[currentLanguage].whatsapp}</span>
+              <Button onClick={handleClick}>Clique aqui</Button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <section className='w-full flex justify-center items-center'>
+        <p className='text-sm pt-12'>{translations[currentLanguage].copy}</p>
+      </section>
+    </>
   )
 }
