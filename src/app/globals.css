@@ -5,13 +5,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap');
 
 body {
-  color: #F9FAFB;
-  background: rgb(14,1,25);
-  background: -moz-linear-gradient(133deg, rgba(14,1,25,1) 0%, rgba(42,8,61,1) 100%);
-  background: -webkit-linear-gradient(133deg, rgba(14,1,25,1) 0%, rgba(42,8,61,1) 100%);
-  background: linear-gradient(133deg, rgba(14,1,25,1) 0%, rgba(42,8,61,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0e0119",endColorstr="#2a083d",GradientType=1);
+  background: #EEEDED;
 }
+
+
+.hero {
+  background: url('./../../public/images/bg-portifolio.jpg') no-repeat center top;
+  background-size: cover;
+}
+
+/* body {
+  color: #F9FAFB;
+  background: url('./../../public/images/bg-portifolio.jpg') no-repeat center top;
+  background-size: cover;
+} */
 
 .scroll {
   scroll-behavior: smooth;
@@ -55,15 +62,15 @@ body {
 }
 
 .arrow-down {
-  animation: scrollDown 1.5s infinite; /* Define a animação */
+  animation: scrollDown 1.5s infinite;
 }
 
 @keyframes scrollDown {
   0%, 100% {
-    transform: translateY(0); /* No início e no fim da animação, posição inicial (sem movimento) */
+    transform: translateY(0); 
   }
   50% {
-    transform: translateY(10px); /* No meio da animação, posição deslocada para baixo */
+    transform: translateY(10px);
   }
 }
 

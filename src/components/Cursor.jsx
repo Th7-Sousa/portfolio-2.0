@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const CursorVagalume = () => {
+const Cursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const updateCursorPosition = (e) => {
@@ -23,14 +23,14 @@ const CursorVagalume = () => {
         left: position.x,
         width: '10px',
         height: '10px',
-        border: '3px solid #CC3CFF',
+        border: '4px solid #CC3CFF',
         borderRadius: '50%',
         pointerEvents: 'none',
         zIndex: 9999,
-        boxShadow: '0 0 30px #4B6ED5',
+        boxShadow: '0 0 20px #CC3CFF',
       }}
     ></div>
   );
 };
 
-export default CursorVagalume;
+export default Cursor;
