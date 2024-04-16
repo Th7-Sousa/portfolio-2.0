@@ -1,19 +1,16 @@
+'use client'
+
 import Image from "next/image"
-import { useState } from "react";
-import { Link } from 'react-scroll';
-import { Cinzel } from '@/app/fonts'
-import { translations } from '@/components/Translate'
 
 import { BsLinkedin } from 'react-icons/bs'
 import { FaGithub } from 'react-icons/fa'
-import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Sobre', href: '#', current: true },
-  { name: 'Projetos', href: '#', current: false },
-  { name: 'Contato', href: '#', current: false },
+  { name: 'SOBRE', href: '#', current: true },
+  { name: 'PROJETOS', href: '#', current: false },
+  { name: 'CONTATO', href: '#', current: false },
 ]
 
 function classNames(...classes) {
@@ -22,7 +19,7 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="bg-gray-900 fixed top-0 w-full z-50">
+    <Disclosure as="nav" className="bg-gray-900 fixed top-0 w-full z-50 py-3">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -47,7 +44,7 @@ export default function Example() {
                     height={40}
                     alt="Thiago Fernandes - Logotipo"
                   />
-                  {/* <p className={` ${Cinzel.className} text-2xl text-violeta-100 `}>Th</p> */}
+
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -56,8 +53,8 @@ export default function Example() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-base font-medium'
+                          'text-white hover:bg-gray-700',
+                          'rounded-md px-3 py-2 text-base font-semibold'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
@@ -71,8 +68,15 @@ export default function Example() {
 
                 {/* Profile dropdown */}
                 <div className="flex gap-6">
-                  <FaGithub size={30} />
-                  <BsLinkedin size={30} />
+                  <a href="https://github.com/Th7-Sousa" target="_blank">
+                    <FaGithub size={30} title="Github" className="cursor-pointer 
+                    transition ease-in-out delay-100 hover:scale-125 duration-300" />
+                  </a>
+
+                  <a href="https://www.linkedin.com/in/thiago-fernandes-de-sousa/" target="_blank">
+                    <BsLinkedin size={30} title="Linkedin" className="cursor-pointer 
+                    transition ease-in-out delay-100 hover:scale-125 duration-300" />
+                  </a>
                 </div>
 
               </div>

@@ -4,21 +4,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap');
 
-body {
-  background: #EEEDED;
-}
-
 
 .hero {
   background: url('./../../public/images/bg-portifolio.jpg') no-repeat center top;
   background-size: cover;
 }
-
-/* body {
-  color: #F9FAFB;
-  background: url('./../../public/images/bg-portifolio.jpg') no-repeat center top;
-  background-size: cover;
-} */
 
 .scroll {
   scroll-behavior: smooth;
