@@ -14,11 +14,18 @@ module.exports = {
       },
 
       colors: {
+
+        vinho: {
+          100: '#9D146F',
+        },
         brancoFosco: {
           100: '#EEEDED',
         },
+        brancoContraste: {
+          100: '#F1F1F1',
+        },
         violeta: {
-          100: '#CC3CFF',
+          100: '#C510C9',
         },
         laranja: {
           100: '#FF7A43',

@@ -8,7 +8,7 @@ import { IoRemoveOutline } from "react-icons/io5";
 
 export default function ProjectsSection() {
   return (
-    <section id='portfolio' className='w-full bg-white flex flex-col items-center gap-8 pt-32 px-40 text-black'>
+    <section id='portfolio' className='w-full bg-brancoContraste-100 flex flex-col items-center gap-8 py-32 px-40 text-black'>
       <div className='flex flex-col items-center gap-1'>
         <h2 className='text-4xl font-bold text-center'>PROJETOS</h2>
         <IoRemoveOutline size={64} className="text-violeta-100" />

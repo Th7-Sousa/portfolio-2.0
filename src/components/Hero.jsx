@@ -17,7 +17,7 @@ export default function Hero() {
 
       <Link to="about" smooth={true} spy={true} duration={600} offset={-50} className="cursor-pointer">
         <div className="mouse-scroll mt-10">
-          <HiArrowNarrowDown className="arrow-down" size={20} color='#CC3CFF' />
+          <HiArrowNarrowDown className="arrow-down" size={20} color='#4B6ED5' />
         </div>
       </Link>
     </section>
