@@ -39,6 +39,7 @@ export default function Example() {
               <div className="flex flex-1 gap-6 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center gap-1">
                   <Image
+                    className=" max-[400px]:hidden"
                     src="/images/iconth.svg"
                     width={40}
                     height={40}

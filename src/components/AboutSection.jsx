@@ -12,12 +12,12 @@ export default function AboutSection() {
   }
 
   return (
-    <section id='about' className='w-full pt-32 pb-32 px-40 flex flex-col items-center bg-brancoFosco-100 text-black'>
+    <section id='about' className='w-full py-32 px-40 flex flex-col items-center bg-brancoFosco-100 text-black'>
       <div className='flex flex-col gap-8'>
 
         <div className='flex flex-col items-center gap-0'>
           <h2 className='text-4xl font-bold text-center'>SOBRE MIM</h2>
-          <IoRemoveOutline size={64} className="text-violeta-100" />
+          <IoRemoveOutline size={64} className=" text-info-100" />
         </div>
 
         <div className="flex justify-between">
@@ -39,7 +39,7 @@ export default function AboutSection() {
           </div>
 
           <div className=" w-5/12 flex flex-col gap-3">
-            <h3 className="text-2xl mb-3 font-semibold">Minhas Skills</h3>
+            <h3 className="text-2xl mb-3 font-semibold">Minhas Habilidades</h3>
             <div className="flex flex-wrap gap-6 border-1">
               {
                 Object.entries(skills).map(([key, value]) => {

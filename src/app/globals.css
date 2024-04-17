@@ -44,7 +44,7 @@
   width: 38px;
   height: 60px;
   background-color: transparent;
-  border: 3px solid #CC3CFF;
+  border: 3px solid #4B6ED5;
   border-radius: 40px;
   display: flex;
   justify-content: center;
@@ -69,7 +69,7 @@
   text-align: center;
   font-size: 40px;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #4B6ED5, #FF7A43, #CC3CFF);
+  background: linear-gradient(90deg, #FF7A43, #CC3CFF, #4B6ED5);
   letter-spacing: 5px;
   -webkit-background-clip: text;
   background-clip: text;
