@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
 
-      <main className="w-full min-h-screen bg-transparent flex items-center flex-col rounded-lg bg-brancoFosco-100">
+      <main className="w-full min-h-screen bg-transparent flex flex-col rounded-lg bg-brancoFosco-100">
 
         <div className='hero w-full pb-20 flex flex-col gap-12 text-white'>
           <Nav />
